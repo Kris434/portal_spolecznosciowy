@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include 'connection.php';
 
 if(isset($_POST['username']) && isset($_POST['password1']) && isset($_POST['password2']))
 {
@@ -7,8 +7,8 @@ if(isset($_POST['username']) && isset($_POST['password1']) && isset($_POST['pass
     $password1 = $_POST['password1'];
     $password2 = $_POST['password2'];
 
-    if(!preg_match('/^[a-z]\w{2,25}$/i', $username))
-    {
-        echo 
-    }
+//    if(!preg_match('/^[a-z]\w{2,25}$/i', $username))
+//    {
+//        echo
+//    }
 }
