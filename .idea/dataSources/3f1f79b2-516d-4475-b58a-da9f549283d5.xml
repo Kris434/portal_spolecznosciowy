@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="portal@localhost">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.43">
+    <root id="1">
+      <DefaultCasing>lower/lower</DefaultCasing>
+      <ServerVersion>10.4.20</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="aclapp"/>
+    <schema id="3" parent="1" name="bookstore"/>
+    <schema id="4" parent="1" name="ee09"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="kary_acl"/>
+    <schema id="7" parent="1" name="kek"/>
+    <schema id="8" parent="1" name="komis"/>
+    <schema id="9" parent="1" name="mysql"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <schema id="11" parent="1" name="phpmyadmin"/>
+    <schema id="12" parent="1" name="portal">
+      <Current>1</Current>
+    </schema>
+    <schema id="13" parent="1" name="projekt_bicz"/>
+    <schema id="14" parent="1" name="test"/>
+    <table id="15" parent="12" name="uzytkownicy"/>
+    <column id="16" parent="15" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>INT(10) UNSIGNED|4s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="17" parent="15" name="login">
+      <DataType>VARCHAR(50)|12s</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+      <Position>2</Position>
+    </column>
+    <column id="18" parent="15" name="haslo">
+      <DataType>VARCHAR(50)|12s</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+      <Position>3</Position>
+    </column>
+    <index id="19" parent="15" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <key id="20" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
+    </key>
+  </database-model>
+</dataSource>
