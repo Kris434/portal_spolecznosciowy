@@ -1,51 +1,44 @@
 <?php
-include('connection.php');
+include './connection.php';
 
-if(isset($_POST['username']) && isset($_POST['password1']) && isset($_POST['password2']))
+if(isset($_POST['registerBtn']))
 {
-    $username = $_POST['username'];
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $email = $_POST['email'];
+    $username = $_POST['login'];
     $password1 = $_POST['password1'];
     $password2 = $_POST['password2'];
+    $date = $_POST['birthday'];
 
-    $sql = "SELECT * FROM `uzytkownicy` WHERE `login` =" . $this -> username;
-
-    include('accounts/connection.php');
+    $sql = "SELECT * FROM `dane_podstawowe` WHERE `email` LIKE '$email'";
 
     $result = $connection -> query($sql);
 
     if($result !== false && $result -> num_rows > 0)
     {
-        echo 'Taki użytkownik już istnieje';
+        echo 'Użytkownik z takim adresem e-mail już istnieje';
     }
     else
     {
-        if(preg_match('/^[a-z]\w{2,25}$/i', $this -> username))
+        if($password1 === $password2)
         {
-            if($password1 === $password2)
-            {
-                $pass = sha1($password1);
+            $pass = sha1($password1);
 
-                $sql = "Insert into uzytkownicy (`login`, `haslo`) VALUES $username, $pass";
+            $sql = "INSERT INTO `dane_podstawowe` (`id`, `imie`, `nazwisko`, `data_urodzenia_uzytkownika`, `login`, `haslo`, `email`) VALUES ('', '$name', '$surname', '$date', '$username', '$pass', '$email')";
 
-                $result = $connection -> query($sql);
+            $result = $connection -> query($sql);
 
-                if($result)
-                {
-                    echo 'Konto zostało utworzone';
-                }
-                else
-                {
-                    echo 'Wystąpił niespodziewany błąd';
-                }
-            }
-            else
-            {
-                echo "Hasła nie są takie same";
-            }
+            echo 'Konto zostało utworzone';
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $username;
+
+            header('refresh: 5; url=../index.php');
+
         }
         else
         {
-
+            echo "Hasła nie są takie same";
         }
     }
 }
