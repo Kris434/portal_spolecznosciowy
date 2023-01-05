@@ -3,9 +3,9 @@ include './connection.php';
 
 if(isset($_POST['registerBtn']))
 {
-    $name = $_POST['name'];
-    $surname = $_POST['surname'];
-    $email = $_POST['email'];
+    $name = $_POST['Name'];
+    $surname = $_POST['Surname'];
+    $email = $_POST['E-mail'];
     $username = $_POST['login'];
     $password1 = $_POST['password1'];
     $password2 = $_POST['password2'];
@@ -35,18 +35,18 @@ if(isset($_POST['registerBtn']))
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username;
 
-                header('refresh: 5; url=../index.php');
+                header('refresh: 5; url=../index.html');
             }
             else
             {
                 echo 'Hasło musi mieć przynajmniej 8 znaków';
-                header('refresh: 5; url=../index.php');
+                header('refresh: 5; url=../index.html');
             }
         }
         else
         {
             echo "Hasła nie są takie same";
-            header('refresh: 5; url=../index.php');
+            header('refresh: 5; url=../index.html');
         }
     }
 }
