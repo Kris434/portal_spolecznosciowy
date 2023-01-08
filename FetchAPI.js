@@ -1,6 +1,6 @@
 import fetch from 'unfetch';
 
-  fetch('http://localhost/portal/api/posts')
+  fetch(http://localhost/portal/portal_spolecznosciowy/api/posts)
   .then(response => response.json())
   .then(posts => {
     
