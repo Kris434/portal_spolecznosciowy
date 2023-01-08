@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 06 Sty 2023, 22:11
+-- Czas generowania: 08 Sty 2023, 21:32
 -- Wersja serwera: 10.4.20-MariaDB
 -- Wersja PHP: 8.0.9
 
@@ -38,6 +38,14 @@ CREATE TABLE `dane_podstawowe` (
   `data_zalozenia_konta` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
+--
+-- Zrzut danych tabeli `dane_podstawowe`
+--
+
+INSERT INTO `dane_podstawowe` (`id`, `imie`, `nazwisko`, `data_urodzenia_uzytkownika`, `login`, `haslo`, `email`, `data_zalozenia_konta`) VALUES
+(1, 'Krzysztof ', 'Bicz', '2014-01-01', 'Kris', 'Kris', 'Kris@kris.pl', '2023-01-08 20:30:37'),
+(2, 'Rychu', 'Patryka', '2015-01-08', 'Rychu', 'Hasełko', 'email@email.com', '2023-01-08 20:31:07');
+
 -- --------------------------------------------------------
 
 --
@@ -52,6 +60,14 @@ CREATE TABLE `posts` (
   `Post` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
   `Cameleons` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `posts`
+--
+
+INSERT INTO `posts` (`ID`, `userID`, `PostDate`, `EditDate`, `Post`, `Cameleons`) VALUES
+(1, 1, '2023-01-08 20:31:19', '2023-01-08 20:31:19', 'xDDD', 41412),
+(2, 2, '2023-01-08 20:31:27', '2023-01-08 20:31:27', 'Nie xD', 232);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -75,10 +91,16 @@ ALTER TABLE `posts`
 --
 
 --
+-- AUTO_INCREMENT dla tabeli `dane_podstawowe`
+--
+ALTER TABLE `dane_podstawowe`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT dla tabeli `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ograniczenia dla zrzutów tabel
