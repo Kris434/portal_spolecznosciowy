@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false)
+if(!isset($_SESSION['loggedin']))
 {
-    header('location: index.html');
+    header('../index.html');
 }
 ?>
 
@@ -36,7 +36,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false)
 
 <main>
     <div id="posty">
-
+        
     </div>
 </main>
 
