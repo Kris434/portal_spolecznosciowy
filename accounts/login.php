@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include "connection.php";
 
 if(isset($_POST['login']) && isset($_POST['password']))
@@ -12,11 +14,16 @@ if(isset($_POST['login']) && isset($_POST['password']))
 
     if($result -> num_rows == 1)
     {
-        $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $result -> login;
-        $_SESSION['userId'] = $result -> id;
+        $result = $result -> fetch_assoc();
 
-        header('location: ../index.html');
+        if($result['haslo'] == $password && $result['login'] == $username)
+        {
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $result -> login;
+            $_SESSION['userId'] = $result -> id;
+
+            header('location: ../main_page.php');
+        }
     }
     else
     {
