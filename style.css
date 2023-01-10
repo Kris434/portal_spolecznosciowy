@@ -1,12 +1,40 @@
 body
 {
     background: cadetblue;
+    margin: 0;
+}
+
+header
+{
+    background-color: #501783;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+header nav
+{
+    text-align: center;
+}
+
+header a
+{
+    color: white;
+    text-decoration: none;
+    margin-right: 25px;
+    margin-left: 25px;
+    display: inline-block;
+    text-align: center;
+    font-family: Gill Sans, sans-serif;
+    font-weight: 500;
 }
 
 form
 {
-    background: rebeccapurple;
-    border: 15px solid white;
+    background: #501783;
+    border: 10px solid white;
     border-radius: 45px;
     -webkit-border-radius: 35px;
     -moz-border-radius: 20px;
@@ -38,18 +66,16 @@ form input
 
 button
 {
-      background: rebeccapurple;
-      color: #FFFFFF;
-      border: 6px solid #FFFFFF;
+      background: #501783;
+      color: white;
+      border: 4px solid white;
       border-radius: 35px;
       -webkit-border-radius: 35px;
       -moz-border-radius: 20px;
-      margin-top: 10px;
-      width: 196px;
+      width: 150px;
       height: 46px;
       text-align: center;
       cursor: pointer;
-      outline: none;
 }
 
 button:hover
@@ -84,19 +110,6 @@ form input[type="date"]
     border-radius: 4px;
     -webkit-border-radius: 35px;
     -moz-border-radius: 4px;
-}
-
-button
-{
-    width: 100%;
-    background: purple;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    cursor: pointer;
 }
 
 .sidebar
