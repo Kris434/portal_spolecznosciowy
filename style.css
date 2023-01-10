@@ -91,6 +91,7 @@ button
       height: 46px;
       text-align: center;
       cursor: pointer;
+    transition: 0.2s;
 }
 button:hover
 {
@@ -237,9 +238,31 @@ p
     width: 65%;
 }
 
+h3 {
+    text-align: center;
+    font-size: 35px;
+    margin: 15px;
+}
 
+.postForm {
+    width: 50%;
+    min-width: 200px;
+    height: 150px;
+    margin: 10px auto;
+}
 
+.postForm input {
+    height: 30px;
+    transition: 0.2s;
+}
+.postForm input:focus
+{
+    background-color: #ccc;
+}
 
-
-
-
+.postForm label {
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    display: block;
+}

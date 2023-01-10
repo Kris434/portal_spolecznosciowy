@@ -39,11 +39,13 @@ if(!isset($_SESSION['loggedin']))
 
 <main>
     <div>
-        <form action="posts/createPost.php" method="post">
+        <h3>Dodaj posta</h3>
+        <form action="posts/createPost.php" method="post" class="postForm">
             <label>Treść posta:</label><input type="text" name="text">
             <button type="submit">Dodaj posta</button>
         </form>
     </div>
+    <hr>
     <div id="posty">
         <script>
             fetch('http://localhost/portal/portal_spolecznosciowy/api/posts')
