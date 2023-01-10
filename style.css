@@ -49,7 +49,7 @@ header a
     font-family: Gill Sans, sans-serif;
     font-weight: 500;
 }
-form
+.form
 {
     background: #501783;
     border: 10px solid white;
@@ -63,7 +63,7 @@ form
     flex-direction: column;
     align-items: center;
 }
-form label
+.form label
 {
     font-family: Gill Sans, sans-serif;
     font-weight: 500;
@@ -72,7 +72,7 @@ form label
     width: 100%;
     text-align: center;
 }
-form input
+.form input
 {
     font-family: Arial, sans-serif;
     font-weight: 300;
@@ -164,6 +164,81 @@ p
 {
     margin: 10px;
 }
+
+.onePost
+{
+    background-color: #3b5998;
+    color: white;
+    border: 2px solid black;
+    padding: 16px;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 20px;
+    margin: 10px auto;
+}
+
+.post
+{
+    background-color: white;
+    color: black;
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 20px;
+    width: 500px;
+}
+
+.postDate
+{
+    display: flex;
+    align-items: center;
+}
+
+.username
+{
+    flex: 3;
+    border: 2px solid black;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 20px;
+    width: 120px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button
+{
+    background: #501783;
+    color: white;
+    border: 2px solid white;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 20px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#posty
+{
+    width: 30%;
+    margin: 10px auto;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 20px;
+}
+
+.cameleons
+{
+   float: right;
+    width: 65%;
+}
+
+
+
 
 
 

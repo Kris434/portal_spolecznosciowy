@@ -16,6 +16,7 @@ if(!isset($_SESSION['loggedin']))
     <meta name= "description" content="Serwis prezentuje portal spolecznosciowy. Sprawdz go odrazu, nie zwlekaj" />
     <meta name= "keywords" content="portal, portal spolecznosciowy, znajomi, posty" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <link type="text/css" href="style.css">
 </head>
@@ -44,11 +45,11 @@ if(!isset($_SESSION['loggedin']))
         </form>
     </div>
     <div id="posty">
-
-         <script>
-             fetch('http://localhost/portal/portal_spolecznosciowy/api/posts')
+        <script>
+            fetch('http://localhost/portal/portal_spolecznosciowy/api/posts')
                 .then(response => response.json())
                 .then(data => {
+
                     const posts = document.getElementById("posty")
 
                     data.forEach(element => {
@@ -71,13 +72,9 @@ if(!isset($_SESSION['loggedin']))
                         postDate.classList.add('postDate')
                         postDate.innerHTML = element.postDate
 
-                        let camDiv = document.createElement('div')
-                        onePost.append(camDiv)
-
                         let cameleons = document.createElement('p')
-                        camDiv.append(cameleons)
+                        onePost.append(cameleons)
                         cameleons.classList.add('cameleons')
-                        cameleons.id = element.postId
                         cameleons.innerHTML = element.cameleons
 
                         let cameleonsForm = document.createElement('form')
