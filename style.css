@@ -3,7 +3,6 @@ body
     background: cadetblue;
     margin: 0;
 }
-
 header
 {
     background-color: #501783;
@@ -14,11 +13,31 @@ header
     padding: 20px;
 }
 
+header div img
+{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    left: 20px;
+    top: 5px;
+    bottom: 5px;
+}
+
+header label
+{
+    font-family: Gill Sans, sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+    position: fixed;
+    left: 90px;
+    display: inline-block;
+    top: 20px;
+}
+
 header nav
 {
     text-align: center;
 }
-
 header a
 {
     color: white;
@@ -30,7 +49,6 @@ header a
     font-family: Gill Sans, sans-serif;
     font-weight: 500;
 }
-
 form
 {
     background: #501783;
@@ -45,7 +63,6 @@ form
     flex-direction: column;
     align-items: center;
 }
-
 form label
 {
     font-family: Gill Sans, sans-serif;
@@ -55,7 +72,6 @@ form label
     width: 100%;
     text-align: center;
 }
-
 form input
 {
     font-family: Arial, sans-serif;
@@ -63,7 +79,6 @@ form input
     color: #000000;
     margin: 3px 0;
 }
-
 button
 {
       background: #501783;
@@ -77,17 +92,14 @@ button
       text-align: center;
       cursor: pointer;
 }
-
 button:hover
 {
     background: cadetblue;
 }
-
 button:active
 {
     background: darkorange;
 }
-
 form input[type="text"], form input[type="email"], form input[type="password"]
 {
     width: 80%;
@@ -99,11 +111,9 @@ form input[type="text"], form input[type="email"], form input[type="password"]
     -moz-border-radius: 4px;
     text-align: center;
 }
-
-
 form input[type="date"]
 {
-    width: 40%;
+    width: 25%;
     padding: 4px;
     margin: 2px 0;
     border: 1px solid black;
