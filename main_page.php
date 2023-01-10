@@ -15,6 +15,7 @@ if(!isset($_SESSION['loggedin']))
     <meta name= "description" content="Serwis prezentuje portal spolecznosciowy. Sprawdz go odrazu, nie zwlekaj" />
     <meta name= "keywords" content="portal, portal spolecznosciowy, znajomi, posty" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
@@ -36,50 +37,50 @@ if(!isset($_SESSION['loggedin']))
 
 <main>
     <div id="posty">
-         <script>
-             fetch('http://localhost/portal/portal_spolecznosciowy/api/posts')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
+        <script>
+            fetch('http://localhost/portal/portal_spolecznosciowy/api/posts')
+                .then(response => response.json())
+                .then(data => {
 
-        const posts = document.getElementById("posty")
+                    const posts = document.getElementById("posty")
 
-        data.forEach(element => {
-            let onePost = document.createElement('div')
-            posts.append(onePost)
-            onePost.classList.add('onePost')
+                    data.forEach(element => {
+                        let onePost = document.createElement('div')
+                        posts.append(onePost)
+                        onePost.classList.add('onePost')
 
-            let user = document.createElement('p')
-            onePost.append(user)
-            user.classList.add('username')
-            user.innerHTML = element.name + " " + element.surname
+                        let user = document.createElement('p')
+                        onePost.append(user)
+                        user.classList.add('username')
+                        user.innerHTML = element.name + " " + element.surname
 
-            let post = document.createElement('p')
-            onePost.append(post)
-            post.classList.add('post')
-            post.innerHTML = element.post
+                        let post = document.createElement('p')
+                        onePost.append(post)
+                        post.classList.add('post')
+                        post.innerHTML = element.post
 
-            let postDate = document.createElement('p')
-            onePost.append(postDate)
-            postDate.classList.add('postDate')
-            postDate.innerHTML = element.postDate
+                        let postDate = document.createElement('p')
+                        onePost.append(postDate)
+                        postDate.classList.add('postDate')
+                        postDate.innerHTML = element.postDate
 
-            let cameleons = document.createElement('p')
-            onePost.append(cameleons)
-            cameleons.classList.add('cameleons')
-            cameleons.innerHTML = element.cameleons
+                        let cameleons = document.createElement('p')
+                        onePost.append(cameleons)
+                        cameleons.classList.add('cameleons')
+                        cameleons.innerHTML = element.cameleons
 
-            let cameleonsForm = document.createElement('form')
-            cameleonsForm.action = 'posts/cameleons.php'
-            cameleonsForm.method = 'POST'
-            onePost.append(cameleonsForm)
+                        let cameleonsForm = document.createElement('form')
+                        cameleonsForm.action = 'posts/cameleons.php'
+                        cameleonsForm.method = 'POST'
+                        onePost.append(cameleonsForm)
 
-            let cameleonBtn = document.createElement('button')
-            cameleonBtn.name = element.postId
-            cameleonBtn.textContent = 'Cameleon!'
-            cameleonsForm.append(cameleonBtn)
-        })
-    })
+                        let cameleonBtn = document.createElement('button')
+                        cameleonBtn.name = 'cameleon'
+                        cameleonBtn.value = element.postId
+                        cameleonBtn.textContent = 'Cameleon!'
+                        cameleonsForm.append(cameleonBtn)
+                    })
+                })
         </script>
     </div>
 </main>
