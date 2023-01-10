@@ -1,0 +1,147 @@
+body
+{
+    background: cadetblue;
+}
+
+form
+{
+    background: rebeccapurple;
+    border: 15px solid white;
+    border-radius: 45px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 20px;
+    margin: 45px auto;
+    width: 290px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label
+{
+    font-family: Gill Sans, sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 3px 0;
+    width: 100%;
+    text-align: center;
+}
+
+form input
+{
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+    color: #000000;
+    margin: 3px 0;
+}
+
+button
+{
+      background: rebeccapurple;
+      color: #FFFFFF;
+      border: 6px solid #FFFFFF;
+      border-radius: 35px;
+      -webkit-border-radius: 35px;
+      -moz-border-radius: 20px;
+      margin-top: 10px;
+      width: 196px;
+      height: 46px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+}
+
+button:hover
+{
+    background: cadetblue;
+}
+
+button:active
+{
+    background: darkorange;
+}
+
+form input[type="text"], form input[type="email"], form input[type="password"]
+{
+    width: 80%;
+    padding: 8px;
+    margin: 2px 0;
+    border: 1px solid black;
+    border-radius: 20px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 4px;
+    text-align: center;
+}
+
+
+form input[type="date"]
+{
+    width: 40%;
+    padding: 4px;
+    margin: 2px 0;
+    border: 1px solid black;
+    border-radius: 4px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 4px;
+}
+
+button
+{
+    width: 100%;
+    background: purple;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    cursor: pointer;
+}
+
+.sidebar
+{
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    background: lightgray;
+    padding: 20px;
+}
+
+.sidebar-title
+{
+    color: purple;
+    font-weight: bold;
+}
+
+.sidebar-item
+{
+    margin: 10px 0;
+}
+
+.sidebar-item-link
+{
+    color: black;
+    text-decoration: none;
+}
+
+.sidebar-item-link:hover
+{
+    color: purple;
+}
+
+.main
+{
+    margin: 80px 0 0 200px;
+    padding: 20px;
+}
+
+p
+{
+    margin: 10px;
+}
+
+
+
+
