@@ -5,24 +5,30 @@ include '../accounts/connection.php';
 
 if(isset($_SESSION['loggedin']) && isset($_SESSION['userId']))
 {
-    if(isset($_POST['description']) && strlen($_POST['description']) > 0)
+    if(isset($_POST['text']) && strlen($_POST['text']) > 0)
     {
-        $description = $_POST['description'];
+        $description = $_POST['text'];
         $user = $_SESSION['userId'];
 
-        $sql = "INSERT INTO post (`userID`, `Post`) VALUES ('$user', '$description')";
-
+        $sql = "INSERT INTO posts (`userID`, `Post`) VALUES ('$user', '$description')";
         $result = $connection -> query($sql);
+
+        $getPostId = "SELECT ID FROM posts ORDER BY ID DESC";
+        $result = $connection -> query($getPostId);
+        $result = $result -> fetch_assoc();
+        $id = $result['ID'];
+
+        $insertCameleons = "INSERT INTO cameleons (userID, PostID, Cameleon) VALUES ('$user', '$id', 0)";
+        $result = $connection -> query($insertCameleons);
 
         if($result)
         {
-            echo 'Post został dodany pomyślnie';
-            header('location: ../index.php');
+            header('location: ../main_page.php');
         }
         else
         {
             echo 'Wystąpił nieoczekiwany błąd';
-            header('location: ../index.php');
+            header('refresh: 2; url../main_page.php');
         }
 
         $connection -> close();

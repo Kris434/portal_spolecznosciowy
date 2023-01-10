@@ -3,7 +3,8 @@ session_start();
 
 if(!isset($_SESSION['loggedin']))
 {
-    header('../index.html');
+    header('location: index.html');
+    exit();
 }
 ?>
 
@@ -17,6 +18,7 @@ if(!isset($_SESSION['loggedin']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <link type="text/css" href="style.css">
 </head>
 
 <body>
@@ -29,13 +31,19 @@ if(!isset($_SESSION['loggedin']))
 
     <div>
         <nav>
-
+            <a href="./accounts/logout.php">Wyloguj się</a>
         </nav>
     </div>
 
 </header>
 
 <main>
+    <div>
+        <form action="posts/createPost.php" method="post">
+            <label>Treść posta:</label><input type="text" name="text">
+            <button type="submit">Dodaj posta</button>
+        </form>
+    </div>
     <div id="posty">
         <script>
             fetch('http://localhost/portal/portal_spolecznosciowy/api/posts')
@@ -84,10 +92,5 @@ if(!isset($_SESSION['loggedin']))
         </script>
     </div>
 </main>
-
-<script>
-
-</script>
-
 </body>
 </html>
