@@ -35,7 +35,7 @@ if(isset($_POST['registerBtn']))
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username;
 
-                header('refresh: 5; url=../index.html');
+                header('refresh: 2; url=../index.html');
             }
             else
             {
